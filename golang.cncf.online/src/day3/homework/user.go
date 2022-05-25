@@ -2,11 +2,18 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 )
 
+const PASSWORD = "123456"
+
 func main() {
+	//调用authUser，如果输错三次错误密码，返回false，进入if语句，退出函数
+	if !authUser(PASSWORD) {
+		os.Exit(-1)
+	}
 	//声明一个map存储用户信息
 	users := make(map[string]map[string]string)
 	id := 0
@@ -38,6 +45,25 @@ func main() {
 			break
 		}
 	}
+}
+
+func authUser(PASSWORD string) bool {
+	var myPassword string
+	for i := 0; i < 3; i++ {
+		fmt.Print("请输入密码：")
+		fmt.Scan(&myPassword)
+		if PASSWORD == myPassword {
+			fmt.Println("登录成功！！")
+			return true
+		}
+	}
+	defer func() {
+		if err := recover(); err != nil {
+			return
+			fmt.Print(err)
+		}
+	}()
+	return false
 }
 
 func deleteUser(id string, users map[string]map[string]string) {
