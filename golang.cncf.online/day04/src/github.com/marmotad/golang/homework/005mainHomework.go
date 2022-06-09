@@ -7,6 +7,8 @@ import (
 
 func main() {
 	if pkgs.AuthUser("123456") == true {
+		id := 0
+		users := make(map[string]map[string]string)
 		fmt.Print("欢迎使用用户管理系统！！！")
 		for {
 			// 定义一个string 类型变量op
@@ -16,11 +18,10 @@ func main() {
 2. 修改用户
 3. 删除用户
 4. 查询用户
-5. 退出
+5. 打印所有用户信息
+6. 退出
 请输入指令:`)
 			fmt.Scan(&op)
-			id := 0
-			users := make(map[string]map[string]string)
 			switch op {
 			case "1":
 				pkgs.AddUser(id, users)
@@ -31,10 +32,10 @@ func main() {
 				pkgs.DeleteUser(string(id), users)
 			case "4":
 				pkgs.Quey(users)
-			case "6":
+			case "5":
 				pkgs.PrintAll(users)
 			//如果输入5退出函数
-			case "5":
+			case "6":
 				break
 			}
 		}
