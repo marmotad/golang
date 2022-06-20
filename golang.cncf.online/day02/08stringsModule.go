@@ -43,7 +43,7 @@ func main() {
 	fmt.Println(strings.ToLower("abcABC"))
 	//将小写字母转为大写
 	fmt.Println(strings.ToUpper("abcABC"))
-	//将首字母转换为大写，在18版本中被弃用，参考：D:\code\golong\golang.cncf.online\src\day2\08stringsModule.go
+	//将首字母转换为大写，在18版本中被弃用，参考：D:\code\golong\golang.cncf.online\src\day02\08stringsModule.go
 	fmt.Println(strings.Title("abcABC"))
 	//返回将 s 前后端所有 cutset 包含的 utf-8 码值都去掉的字符串。
 	fmt.Println(strings.Trim("xyzabcyzx", "xz"))
