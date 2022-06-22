@@ -6,6 +6,7 @@ type Address1 struct {
 	Region string
 	Street string
 	No     string
+	//ID     int
 }
 
 type User3 struct {
@@ -50,5 +51,7 @@ func main() {
 	fmt.Println(me2.User3.ID)
 	me2.ID = 10
 	fmt.Println(me2.ID)
-	//
+	//当属性名相同时，必须使用全路径访问
+	//fmt.Printf("%T\n%#v\n", me2, me2)
+
 }
