@@ -29,11 +29,11 @@ type Employee3 struct {
 func main() {
 	var me Employee3
 	//打印匿名结构体中的指针类型
-	fmt.Println("%#v\n", me)
+	fmt.Printf("%#v\n", me)
 	//对匿名结构体中的指针类型赋值
 	me01 := Employee3{
 		User5: &User5{
-			10,
+			1000,
 			"xix",
 			Addredd2{
 				"北京",
