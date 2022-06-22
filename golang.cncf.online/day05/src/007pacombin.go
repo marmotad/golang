@@ -43,5 +43,6 @@ func main() {
 		},
 		Salary: 1000,
 	}
+
 	fmt.Println(me01)
 }
