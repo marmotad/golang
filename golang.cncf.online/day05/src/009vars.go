@@ -20,6 +20,18 @@ type User7 struct {
 	*Address4
 }
 
+//在函数中修改值类型的Name属性的值
+func change(u User6) {
+	u.Addr.No = "xxxx"
+	fmt.Printf("%#v\n", u)
+}
+
+//在函数中修改引用类型的Name属性的值
+func changePoint(u User7) {
+	u.No = "xxxx"
+	fmt.Printf("%#v\n", u)
+}
+
 func main() {
 	me := User6{}
 	me2 := me
@@ -44,5 +56,12 @@ func main() {
 	me4.No = "1000"
 	fmt.Println(me3.No)
 	fmt.Println(me4.No)
+
+	//在函数体内修改值类型的结构体值，值类型的修改只会在函数内生效
+	change(me)
+	fmt.Printf("%#v\n", me)
+	//在函数体内修指针类型的结构体值，指针类型的修改会在函数外生效
+	changePoint(me4)
+	fmt.Printf("%#v\n", me4)
 
 }
